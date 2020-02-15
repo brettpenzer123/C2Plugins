@@ -97,8 +97,8 @@ AddCondition(39, cf_trigger, "On become first user", "Users list",
             "On become first user",
             "Triggered when became first user of current room.", "OnBecomeFirstUser");   
           
-AddComboParamOption("white - list");
-AddComboParamOption("black - lisk");
+AddComboParamOption("whitelist");
+AddComboParamOption("blacklist");
 AddComboParam("List", "List type.", 1);
 AddCondition(51, cf_looping | cf_not_invertible, "For each user", "Permission list", 
              "For each user in  <i>{0}</i>", 
@@ -148,7 +148,7 @@ AddStringParam("Type", 'Room type. "public", "private", or others.', '"public"')
 AddNumberParam("Max peers", "The maximum number of peers that can join this room. Leave 0 for unlimited.", 0);
 AddNumberParam("Life period", "0=Temporary, 1=Persisted.", 0);
 AddNumberParam("Door state", "0=Closed, 1=Open.", 1);
-AddNumberParam("oin permission", "0=Anyone, 1=Black list, 2=White list.", 0);
+AddNumberParam("Join permission", "0=Anyone, 1=Blacklist, 2=Whitelist.", 0);
 AddStringParam("Room ID", 'Room ID. Leave "" to use timestamp form server.', '""');
 AddComboParamOption("Create");
 AddComboParamOption("Create then join");
@@ -185,16 +185,16 @@ AddAction(22, 0, "Stop updating", "Room list",
           
 AddStringParam("UserID", "UserID from authentication.", '""');
 AddStringParam("Name", "Player name.", '""');
-AddComboParamOption("white - list");
-AddComboParamOption("black - lisk");
+AddComboParamOption("whitelist");
+AddComboParamOption("blacklist");
 AddComboParam("List", "List type.", 1);
 AddAction(51, 0, "Add", "Permission list", 
           "Add user <i>{1}</i>, ID: <i>{0}</i> to <i>{2}</i>", 
           "Add user to permission list.", "PermissionListAdd");             
 
 AddStringParam("UserID", "UserID from authentication.", '""');
-AddComboParamOption("white - list");
-AddComboParamOption("black - lisk");
+AddComboParamOption("whitelist");
+AddComboParamOption("blacklist");
 AddComboParam("List", "List type.", 1);
 AddAction(52, 0, "Remove", "Permission list", 
           "Remove user ID: <i>{0}</i> from <i>{1}</i>", 
